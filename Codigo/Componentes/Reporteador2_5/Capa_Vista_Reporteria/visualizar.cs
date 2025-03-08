@@ -21,7 +21,10 @@ namespace Capa_Vista_Reporteria
             mostrar();
         }
 
-        //*Nuevo
+        // *Nuevo / MC*
+
+        // Basado en el código de [Kateryn De Leon].
+        // Fuente: Método [Btn_Ayuda_Click]
         //_______________________________________________________________________________________________________________________________
         public void mostrar()
         {
@@ -69,7 +72,7 @@ namespace Capa_Vista_Reporteria
             }
             else
             {
-                MessageBox.Show($"❌ ERROR: No se encontró el archivo del reporte '{reporteNombre}' en {sRutaReportes}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+               MessageBox.Show($"❌ ERROR: No se encontró el archivo del reporte '{reporteNombre}' en {sRutaReportes}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

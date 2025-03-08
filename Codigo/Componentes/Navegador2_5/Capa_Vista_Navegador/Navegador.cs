@@ -2411,7 +2411,7 @@ namespace Capa_Vista_Navegador
             }
             else
             {
-                //MessageBox.Show("⚠️ No se pudo obtener la ruta del reporte.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("⚠️ No se pudo obtener la ruta del reporte.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         //___________________________________________________________________________________________________________________
