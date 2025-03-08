@@ -2381,26 +2381,40 @@ namespace Capa_Vista_Navegador
             this.Hide(); // Oculta el formulario actual.
         }
 
+        //___________________________________________________________________________________________________________________
         // Maneja el evento de clic en el botón de imprimir.
         private void Btn_Imprimir_Click_1(object sender, EventArgs e)
         {
             // Se crea una instancia del controlador de reportería.
             Capa_Controlador_Reporteria.Controlador controlador = new Capa_Controlador_Reporteria.Controlador();
 
-            // Se obtiene el ID de la aplicación.
+            // Verificar el ID de la aplicación
             ObtenerIdAplicacion(sIdAplicacion);
 
+            // 📌 Mensaje para verificar si "sIdAplicacion" tiene un valor correcto
+            //MessageBox.Show($"ID de la aplicación: {sIdAplicacion}", "Depuración");
+
             // Se consulta la ruta del reporte usando el ID de la aplicación.
+            // Obtener la ruta
             string sRuta = controlador.queryRuta(sIdAplicacion);
 
+            // 📌 Verificar si se obtuvo una ruta
+            //MessageBox.Show($"Ruta obtenida: {sRuta}", "Depuración");
+
             // Si la ruta es válida, se abre el visor de reportes con la ruta obtenida.
-            if (!string.IsNullOrEmpty(sIdAplicacion))
+            //if (!string.IsNullOrEmpty(sIdAplicacion))
+            if (!string.IsNullOrEmpty(sRuta))
             {
                 Capa_Vista_Reporteria.visualizar visualizar = new Capa_Vista_Reporteria.visualizar(sRuta);
                 visualizar.ShowDialog(); // Muestra el reporte en un diálogo modal.
                 lg.funinsertarabitacora(sIdUsuario, "Vio un reporte", sTablaPrincipal, sIdAplicacion);
             }
+            else
+            {
+                //MessageBox.Show("⚠️ No se pudo obtener la ruta del reporte.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+        //___________________________________________________________________________________________________________________
 
         // Maneja el evento de clic en el botón principal de reportes.
         private void Btn_Reportes_Principal_Click(object sender, EventArgs e)
