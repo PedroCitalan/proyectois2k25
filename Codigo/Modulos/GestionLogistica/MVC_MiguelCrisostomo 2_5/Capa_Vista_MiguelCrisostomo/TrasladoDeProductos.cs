@@ -43,6 +43,7 @@ namespace Capa_Vista_MiguelCrisostomo
             Cbo_TipoInformee.SelectedIndex = 0; // Seleccionar el primer elemento por defecto
             Cbo_TipoInformee.SelectedIndexChanged += Cbo_TipoInformee_SelectedIndexChanged;
 
+            //NUEVO
             // Configurar el DataGridView de productos
             Dgv_Productos.Columns.Add("codigoProducto", "Código");
             Dgv_Productos.Columns.Add("nombreProducto", "Nombre");
